@@ -37,8 +37,8 @@ Passo a passo para atualizar esses mesmo anexos na mesma pasta, exemplo atualize
 
 2 - git add .
 
-4 - git commit -am "Alterações feitas"
+3 - git commit -am "Alterações feitas"
 
-5 - git branch -M master
+4 - git branch -M master
 
-6 - git push origin master
+5 - git push origin master
