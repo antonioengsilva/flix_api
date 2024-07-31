@@ -1,0 +1,44 @@
+1 - Criar um novo repositório
+Padrão do github
+…or create a new repository on the command line
+echo "# fli_api" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/antonioengsilva/fli_api.git
+git push -u origin main
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/antonioengsilva/fli_api.git
+git branch -M main
+git push -u origin main
+
+
+Passo a passo para subir os arquivos para o github
+
+1 - criar um arquivo chamado .gitignore contendo os arquivos que não precisa subir
+
+2 - git init
+
+3 - git add .
+
+4 - git commit -am "first commit"
+
+5 - git branch -M master
+
+6 - git remote add origin https://github.com/antonioengsilva/flix_api.git
+
+7 - git push -u origin master
+
+Passo a passo para atualizar esses mesmo anexos na mesma pasta, exemplo atualizei algumas informações?
+1 - git status
+
+2 - git add .
+
+4 - git commit -am "Alterações feitas"
+
+5 - git branch -M master
+
+6 - git push origin master
