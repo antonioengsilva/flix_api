@@ -16,7 +16,7 @@ git branch -M main
 git push -u origin main
 
 
-Passo a passo para subir os arquivos para o github
+Passo a passo para subir ou criar os arquivos para o github
 
 1 - criar um arquivo chamado .gitignore contendo os arquivos que não precisa subir
 
@@ -42,3 +42,12 @@ Passo a passo para atualizar esses mesmo anexos na mesma pasta, exemplo atualize
 4 - git branch -M master
 
 5 - git push origin master
+
+Passo a passo para remover um arquivo, exemplo teste.txt
+1 - git status
+
+2 - git rm --cached teste.txt
+
+3 - git commit -am "Remove teste.txt e adiciona ao .gitignore"
+
+4 - git push origin master

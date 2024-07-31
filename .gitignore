@@ -2,3 +2,4 @@ venv
 *.sqlite3
 __pycache__/
 teste.txt
+como fazer deploy no github.txt
