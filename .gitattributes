@@ -1,0 +1,5 @@
+# Defina finais de linha automáticos para arquivos de texto
+* text=auto
+
+# Manter LF nos arquivos CSV
+*.csv text eol=lf
