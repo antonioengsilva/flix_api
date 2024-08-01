@@ -3,9 +3,8 @@ from rest_framework import generics, views, response, status
 from rest_framework.permissions import IsAuthenticated
 from app.permissions import GlobalDefaultPermission
 from movies.models import Movie
-from movies.serializers import MovieSerializer, MovieListDetailSerializer, MovieStatsSerializer
+from movies.serializers import MovieModelSerializer, MovieStatsSerializer, MovieListDetailSerializer
 from reviews.models import Review
-
 
 class MovieCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission,)
@@ -14,8 +13,7 @@ class MovieCreateListView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         if self.request.method == 'GET':
             return MovieListDetailSerializer
-        return MovieSerializer
-
+        return MovieModelSerializer
 
 class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission,)
@@ -24,8 +22,7 @@ class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     def get_serializer_class(self):
         if self.request.method == 'GET':
             return MovieListDetailSerializer
-        return MovieSerializer
-
+        return MovieModelSerializer
 
 class MovieStatsView(views.APIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission,)
@@ -43,10 +40,11 @@ class MovieStatsView(views.APIView):
             'total_reviews': total_reviews,
             'average_stars': round(average_stars, 1) if average_stars else 0,
         }
+        
         serializer = MovieStatsSerializer(data=data)
         serializer.is_valid(raise_exception=True)
 
         return response.Response(
-            data=serializer.data,
-            status=status.HTTP_200_OK,
+            data=serializer.validated_data,
+            status=status.HTTP_200_OK
         )
